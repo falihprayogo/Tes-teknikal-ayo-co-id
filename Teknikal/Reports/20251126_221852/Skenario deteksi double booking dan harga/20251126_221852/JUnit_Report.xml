@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Skenario deteksi double booking dan harga" time="1.682" tests="3" failures="0" errors="0">
+   <testsuite name="Skenario deteksi double booking dan harga" tests="3" failures="0" errors="0" time="1.682" skipped="0" timestamp="26-11-2025T22:18:55" hostname="FALIH - LAPTOP-5FNK39B3" id="Test Suites/Skenario deteksi double booking dan harga">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="C:\\Users\\FALIH\\Katalon Studio\\Teknikal\\Teknikal\\Reports\\20251126_221852\\Skenario deteksi double booking dan harga\\20251126_221852"/>
+         <property name="logFiles" value="C:\\Users\\FALIH\\Katalon Studio\\Teknikal\\Teknikal\\Reports\\20251126_221852\\Skenario deteksi double booking dan harga\\20251126_221852\\console0.log, C:\\Users\\FALIH\\Katalon Studio\\Teknikal\\Teknikal\\Reports\\20251126_221852\\Skenario deteksi double booking dan harga\\20251126_221852\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="userFullName" value="Tornado"/>
+         <property name="hostName" value="FALIH - LAPTOP-5FNK39B3"/>
+         <property name="hostAddress" value="192.168.100.27"/>
+         <property name="projectName" value="Teknikal"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.2.0.0"/>
+      </properties>
+      <testcase name="Test Cases/Mock/DataTabel" time="0.386" classname="Test Cases/Mock/DataTabel" status="PASSED">
+         <system-out><![CDATA[26-11-2025T22:18:56 - [TEST_CASE][PASSED] - Test Cases/Mock/DataTabel: Test Cases/Mock/DataTabel
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - println("=== MOCK DATA LOADED ==="): null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]: null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]: null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - return [bookingList, scheduleList]: null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Booking/TC_DetectDoubleBooking" time="0.492" classname="Test Cases/Booking/TC_DetectDoubleBooking" status="PASSED">
+         <system-out><![CDATA[26-11-2025T22:18:56 - [TEST_CASE][PASSED] - Test Cases/Booking/TC_DetectDoubleBooking: Test Cases/Booking/TC_DetectDoubleBooking
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - println("=== TC: DETECT DOUBLE BOOKING ==="): null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - mock = callTestCase(findTestCase("Mock/DataTabel"), [:]): Call Test Case 'Test Cases/Mock/DataTabel' successfully
+
+26-11-2025T22:18:56 - [TEST_CASE][PASSED] - Test Cases/Mock/DataTabel: Test Cases/Mock/DataTabel
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - println("=== MOCK DATA LOADED ==="): null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]: null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]: null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - return [bookingList, scheduleList]: null
+
+26-11-2025T22:18:56 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/Mock/DataTabel' successfully
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - bookingList = mock[0]: null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - checkDate = "2022-12-10": null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - checkStart = "09:00": null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - checkEnd = "11:00": null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - conflicting = bookingList.findAll({ java.lang.Object b -> ... }): null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - println("Jumlah booking bentrok: " + conflicting.size()): null
+
+26-11-2025T22:18:56 - [TEST_STEP][PASSED] - conflicting.each({ -> ... }): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - try: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - assert conflicting.size() <= 1 : "DOUBLE BOOKING TERDETEKSI!": null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - catch (AssertionError e): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - println(message): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - println("Test gagal tapi dilanjutkan..."): null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Booking/TC_ValidatePrice" time="0.236" classname="Test Cases/Booking/TC_ValidatePrice" status="PASSED">
+         <system-out><![CDATA[26-11-2025T22:18:57 - [TEST_CASE][PASSED] - Test Cases/Booking/TC_ValidatePrice: Test Cases/Booking/TC_ValidatePrice
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - println("=== TC: VALIDATE BOOKING PRICE ==="): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - mock = callTestCase(findTestCase("Mock/DataTabel"), [:]): Call Test Case 'Test Cases/Mock/DataTabel' successfully
+
+26-11-2025T22:18:57 - [TEST_CASE][PASSED] - Test Cases/Mock/DataTabel: Test Cases/Mock/DataTabel
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - println("=== MOCK DATA LOADED ==="): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - return [bookingList, scheduleList]: null
+
+26-11-2025T22:18:57 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/Mock/DataTabel' successfully
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - bookingList = mock[0]: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - scheduleList = mock[1]: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - validatePrice = { java.lang.String bookingId -> ... }: null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - validatePrice.call("BK/000001"): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - validatePrice.call("BK/000005"): null
+
+26-11-2025T22:18:57 - [TEST_STEP][PASSED] - println("
+=== VALIDASI HARGA SELESAI ==="): null]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[26-11-2025T22:18:55 - [TEST_SUITE][PASSED] - Skenario deteksi double booking dan harga: Test Cases/Booking/TC_ValidatePrice]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

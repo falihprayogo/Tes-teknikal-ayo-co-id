@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_DetectDoubleBooking</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>3c4e42e6-8997-4292-9c95-dc72c308fc1a</testCaseGuid>
+</TestCaseEntity>

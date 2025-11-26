@@ -1,0 +1,85 @@
+2025-11-26 22:18:55.512 INFO  c.k.katalon.core.main.TestSuiteExecutor  - START Test Suites/Skenario deteksi double booking dan harga
+2025-11-26 22:18:55.623 INFO  c.k.katalon.core.main.TestSuiteExecutor  - userFullName = Tornado
+2025-11-26 22:18:55.624 INFO  c.k.katalon.core.main.TestSuiteExecutor  - projectName = Teknikal
+2025-11-26 22:18:55.625 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostName = FALIH - LAPTOP-5FNK39B3
+2025-11-26 22:18:55.625 INFO  c.k.katalon.core.main.TestSuiteExecutor  - os = Windows 11 64bit
+2025-11-26 22:18:55.625 INFO  c.k.katalon.core.main.TestSuiteExecutor  - hostAddress = 192.168.100.27
+2025-11-26 22:18:55.626 INFO  c.k.katalon.core.main.TestSuiteExecutor  - katalonVersion = 10.2.0.0
+2025-11-26 22:18:56.151 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:56.151 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/Mock/DataTabel
+2025-11-26 22:18:56.518 DEBUG testcase.DataTabel                       - 1: println("=== MOCK DATA LOADED ===")
+=== MOCK DATA LOADED ===
+2025-11-26 22:18:56.525 DEBUG testcase.DataTabel                       - 2: bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]
+2025-11-26 22:18:56.529 DEBUG testcase.DataTabel                       - 3: scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]
+2025-11-26 22:18:56.531 DEBUG testcase.DataTabel                       - 4: return [bookingList, scheduleList]
+2025-11-26 22:18:56.536 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/Mock/DataTabel
+2025-11-26 22:18:56.547 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:56.549 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/Booking/TC_DetectDoubleBooking
+2025-11-26 22:18:56.754 DEBUG testcase.TC_DetectDoubleBooking          - 1: println("=== TC: DETECT DOUBLE BOOKING ===")
+=== TC: DETECT DOUBLE BOOKING ===
+2025-11-26 22:18:56.756 DEBUG testcase.TC_DetectDoubleBooking          - 2: mock = callTestCase(findTestCase("Mock/DataTabel"), [:])
+2025-11-26 22:18:56.910 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:56.910 INFO  c.k.katalon.core.main.TestCaseExecutor   - CALL Test Cases/Mock/DataTabel
+2025-11-26 22:18:56.925 DEBUG testcase.DataTabel                       - 1: println("=== MOCK DATA LOADED ===")
+=== MOCK DATA LOADED ===
+2025-11-26 22:18:56.926 DEBUG testcase.DataTabel                       - 2: bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]
+2025-11-26 22:18:56.927 DEBUG testcase.DataTabel                       - 3: scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]
+2025-11-26 22:18:56.928 DEBUG testcase.DataTabel                       - 4: return [bookingList, scheduleList]
+2025-11-26 22:18:56.930 INFO  c.k.katalon.core.main.TestCaseExecutor   - END CALL Test Cases/Mock/DataTabel
+2025-11-26 22:18:56.930 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:56.947 DEBUG testcase.TC_DetectDoubleBooking          - 3: bookingList = mock[0]
+2025-11-26 22:18:56.962 DEBUG testcase.TC_DetectDoubleBooking          - 4: checkDate = "2022-12-10"
+2025-11-26 22:18:56.965 DEBUG testcase.TC_DetectDoubleBooking          - 5: checkStart = "09:00"
+2025-11-26 22:18:56.969 DEBUG testcase.TC_DetectDoubleBooking          - 6: checkEnd = "11:00"
+2025-11-26 22:18:56.973 DEBUG testcase.TC_DetectDoubleBooking          - 7: conflicting = bookingList.findAll({ java.lang.Object b -> ... })
+2025-11-26 22:18:56.987 DEBUG testcase.TC_DetectDoubleBooking          - 8: println("Jumlah booking bentrok: " + conflicting.size())
+Jumlah booking bentrok: 2
+2025-11-26 22:18:56.994 DEBUG testcase.TC_DetectDoubleBooking          - 9: conflicting.each({ -> ... })
+Bentrok: BK/000001
+Bentrok: BK/000005
+2025-11-26 22:18:57.000 DEBUG testcase.TC_DetectDoubleBooking          - 10: try
+2025-11-26 22:18:57.003 DEBUG testcase.TC_DetectDoubleBooking          - 1: assert conflicting.size() <= 1 : "DOUBLE BOOKING TERDETEKSI!"
+2025-11-26 22:18:57.007 DEBUG testcase.TC_DetectDoubleBooking          - 11: catch (AssertionError e)
+2025-11-26 22:18:57.010 DEBUG testcase.TC_DetectDoubleBooking          - 1: println(message)
+DOUBLE BOOKING TERDETEKSI!. Expression: (conflicting.size() <= 1)
+2025-11-26 22:18:57.037 DEBUG testcase.TC_DetectDoubleBooking          - 2: println("Test gagal tapi dilanjutkan...")
+Test gagal tapi dilanjutkan...
+2025-11-26 22:18:57.041 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/Booking/TC_DetectDoubleBooking
+2025-11-26 22:18:57.043 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:57.043 INFO  c.k.katalon.core.main.TestCaseExecutor   - START Test Cases/Booking/TC_ValidatePrice
+2025-11-26 22:18:57.146 DEBUG testcase.TC_ValidatePrice                - 1: println("=== TC: VALIDATE BOOKING PRICE ===")
+=== TC: VALIDATE BOOKING PRICE ===
+2025-11-26 22:18:57.147 DEBUG testcase.TC_ValidatePrice                - 2: mock = callTestCase(findTestCase("Mock/DataTabel"), [:])
+2025-11-26 22:18:57.206 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:57.206 INFO  c.k.katalon.core.main.TestCaseExecutor   - CALL Test Cases/Mock/DataTabel
+2025-11-26 22:18:57.217 DEBUG testcase.DataTabel                       - 1: println("=== MOCK DATA LOADED ===")
+=== MOCK DATA LOADED ===
+2025-11-26 22:18:57.218 DEBUG testcase.DataTabel                       - 2: bookingList = [["id":1001, "booking_id":"BK/000001", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ], ["id":1005, "booking_id":"BK/000005", "venue_id":15, "user_id":12, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", ... ]]
+2025-11-26 22:18:57.220 DEBUG testcase.DataTabel                       - 3: scheduleList = [["id":11, "venue_id":15, "date":"2022-12-10", "start_time":"07:00", "end_time":"09:00", "price":800000], ["id":12, "venue_id":15, "date":"2022-12-10", "start_time":"09:00", "end_time":"11:00", "price":1000000], ["id":13, "venue_id":15, "date":"2022-12-10", "start_time":"11:00", "end_time":"13:00", "price":1200000]]
+2025-11-26 22:18:57.222 DEBUG testcase.DataTabel                       - 4: return [bookingList, scheduleList]
+2025-11-26 22:18:57.224 INFO  c.k.katalon.core.main.TestCaseExecutor   - END CALL Test Cases/Mock/DataTabel
+2025-11-26 22:18:57.225 INFO  c.k.katalon.core.main.TestCaseExecutor   - --------------------
+2025-11-26 22:18:57.227 DEBUG testcase.TC_ValidatePrice                - 3: bookingList = mock[0]
+2025-11-26 22:18:57.231 DEBUG testcase.TC_ValidatePrice                - 4: scheduleList = mock[1]
+2025-11-26 22:18:57.233 DEBUG testcase.TC_ValidatePrice                - 5: validatePrice = { java.lang.String bookingId -> ... }
+2025-11-26 22:18:57.238 DEBUG testcase.TC_ValidatePrice                - 6: validatePrice.call("BK/000001")
+
+--- VALIDASI BK/000001 ---
+Booking Price  : 1200000
+Schedule Price : 1000000
+❌ Harga booking BK/000001 tidak sesuai schedule!. Expression: (booking.price == schedule.price)
+⚠ Test gagal tapi dilanjutkan...
+2025-11-26 22:18:57.273 DEBUG testcase.TC_ValidatePrice                - 7: validatePrice.call("BK/000005")
+
+--- VALIDASI BK/000005 ---
+Booking Price  : 1000000
+Schedule Price : 1000000
+✅ Harga booking BK/000005 sesuai schedule.
+2025-11-26 22:18:57.276 DEBUG testcase.TC_ValidatePrice                - 8: println("
+=== VALIDASI HARGA SELESAI ===")
+
+=== VALIDASI HARGA SELESAI ===
+2025-11-26 22:18:57.279 INFO  c.k.katalon.core.main.TestCaseExecutor   - END Test Cases/Booking/TC_ValidatePrice
+2025-11-26 22:18:57.318 INFO  c.k.katalon.core.main.TestSuiteExecutor  - --------------------
+2025-11-26 22:18:57.319 INFO  c.k.katalon.core.main.TestSuiteExecutor  - END Test Suites/Skenario deteksi double booking dan harga
+2025-11-26 22:18:57.319 INFO  c.k.katalon.core.main.TestSuiteExecutor  - ====================
